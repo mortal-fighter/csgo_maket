@@ -1,0 +1,39 @@
+
+<!doctype html>
+
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+
+  <title>CS:GO cheat prototype</title>
+  <meta name="description" content="CS:GO cheat prototype">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/main.css"/>
+</head>
+<body>
+  <!-- rewrite classes towards BEM methodology -->
+  <div id="controls">
+    <input id="btn-clear" type="button" value="Сбросить" />
+    <span>Уклонение:</span>
+    <label class="mode"><input type="radio" name="mode" value="2" checked/>Стрейф</label>
+    <label class="mode"><input type="radio" name="mode" value="1"/>Случайно</label>
+    <label class="mode"><input type="radio" name="mode" value="3"/>Отключено</label>
+  </div>
+  <div id="content">
+  	<ul id="soldiers">
+      <li class="target"><img  src="./img/soldier1.png"/></li> 
+      <li class="target"><img  src="./img/soldier2.png"/></li> 
+      <li class="target"><img src="./img/soldier3.png"/></li> 
+      <li class="target"><img src="./img/soldier4.png"/></li> 
+      <li class="target"><img src="./img/soldier5.png"/></li> 
+    </ul>
+  </div>
+
+  <div id="weapon">
+    <img src="./img/weapon.png" width="500px" />
+  </div>
+
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/index.js"></script>
+</body>
+</html>
