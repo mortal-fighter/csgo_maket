@@ -19,6 +19,15 @@ $(document).ready(function() {
 		//$(this).removeClass('bordered');
 	})
 
+	$('.target').on('click', function() {
+		$(this).addClass('bordered')
+		setTimeout(() => {
+			$(this).removeClass('bordered')
+		}, 1000)
+
+		soldiersDie(this)
+	})
+
 	soldiersInitPosition();
 
 	soldiersInitZIndex();
@@ -36,6 +45,11 @@ function soldiersInitPosition() {
 	$('.target').each(function(index, element) {
 		$(this).css('left', index*200+'px')
 		$(this).css('top', 0)
+
+		var img = $('img', this)
+		$(img).removeClass('rotated-left').removeClass('rotated-right')
+		
+		$(this).show()
 	});
 } 
 
@@ -79,6 +93,21 @@ function soldiersEvade2(soldier) {
 	} else {
 		$(soldier).css('left', parseInt($(soldier).css('left')) + distance + 'px')
 	}
+}
+
+function soldiersDie(soldier) {
+	var img = $('img', soldier)
+	var direction = generateRandomInteger(1)
+
+	if (direction == 0) {
+		img.addClass('rotated-left')
+	} else {
+		img.addClass('rotated-right')
+	}
+
+	setTimeout(() => {
+		$(soldier).hide();
+	}, 3000)
 }
 
 var mouseX, mouseY;

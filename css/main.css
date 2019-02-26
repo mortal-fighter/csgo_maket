@@ -78,6 +78,10 @@ ol, ul {
   transition: 0.1s ease-in;
 }
 
+#soldiers li img {
+  transition: 1s ease-in;
+}
+
 #weapon {
   position: fixed;
   bottom: -50px;
@@ -95,3 +99,12 @@ img{
   border: 1px solid red;
 }
 
+.rotated-right {
+  transform: rotate(90deg);
+  transform-origin: bottom;
+}
+
+.rotated-left {
+  transform: rotate(-90deg);
+  transform-origin: bottom;
+}
